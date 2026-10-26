@@ -1,0 +1,51 @@
+{
+  "wall": {
+    "postersOnScreen": 45,
+    "gapPx": 8,
+    "cornerRadiusPx": 4
+  },
+  "camera": {
+    "perspectivePx": 1200,
+    "rotateXDeg": 12,
+    "rotateYDeg": -10,
+    "rotateZDeg": -18,
+    "scale": 1.4,
+    "zoomAmplitude": 0.04,
+    "zoomPeriodSec": 150
+  },
+  "motion": {
+    "speedPxPerSec": 18,
+    "directionDeg": 215
+  },
+  "overlay": {
+    "dim": 0.35,
+    "centerShade": 0.6,
+    "vignette": 0.8
+  },
+  "clock": {
+    "locale": "ru-RU",
+    "hour12": false,
+    "timeSizeVh": 16,
+    "dateSizeVh": 3.4,
+    "offsetYVh": 0,
+    "fontWeight": 300,
+    "dateFormat": "{weekday}, {day} {month} {year}"
+  },
+  "selection": {
+    "avoidRepeatsAcrossRuns": true,
+    "excludeAppIds": [480],
+    "excludeNamePatterns": ["Public Test", "\\bPTS\\b", "Test Server", "Unstable", "Dedicated Server", "\\bSDK\\b", "Soundtrack"]
+  },
+  "performance": {
+    "maxFps": 60,
+    "textureWidth": 0,
+    "textureBudgetMB": 192,
+    "renderScale": 1
+  },
+  "library": {
+    "includeTypes": ["Game"],
+    "steamApiKey": "",
+    "steamGridDbKey": "",
+    "maxCacheMB": 400
+  }
+}

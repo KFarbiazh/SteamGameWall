@@ -1,0 +1,80 @@
+:root {
+  --dim: 0.35;
+  --center-shade: 0.6;
+  --vignette: 0.8;
+  --time-size: 16vh;
+  --date-size: 3.4vh;
+  --clock-offset: 0vh;
+  --clock-weight: 300;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html, body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: #000;
+  cursor: none;
+}
+
+#wall {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 1.2s ease;
+}
+#wall.ready { opacity: 1; }
+
+/* Static overlay: whole-wall dim, darker pool behind the clock, edge vignette. */
+#shade {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(ellipse 42% 36% at 50% 50%,
+      rgba(0, 0, 0, var(--center-shade)) 0%,
+      rgba(0, 0, 0, calc(var(--center-shade) * 0.55)) 55%,
+      rgba(0, 0, 0, 0) 100%),
+    radial-gradient(ellipse 75% 75% at 50% 50%,
+      rgba(0, 0, 0, 0) 55%,
+      rgba(0, 0, 0, var(--vignette)) 100%),
+    rgba(0, 0, 0, var(--dim));
+}
+
+#clock {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transform: translateY(var(--clock-offset));
+  pointer-events: none;
+  color: #fff;
+  font-family: "Segoe UI Variable Display", "Segoe UI", "Motiva Sans", Arial, sans-serif;
+  text-align: center;
+  text-shadow: 0 0.04em 0.5em rgba(0, 0, 0, 0.55), 0 0 2em rgba(0, 0, 0, 0.35);
+  opacity: 0;
+  animation: appear 1s 0.1s ease forwards;
+}
+
+#time {
+  font-size: var(--time-size);
+  font-weight: var(--clock-weight);
+  line-height: 1;
+  letter-spacing: -0.02em;
+  font-variant-numeric: tabular-nums;
+}
+
+#date {
+  margin-top: 0.9em;
+  font-size: var(--date-size);
+  font-weight: 400;
+  letter-spacing: 0.01em;
+  opacity: 0.88;
+}
+
+@keyframes appear { to { opacity: 1; } }
