@@ -4,6 +4,8 @@ A custom screensaver for **Steam Big Picture** (Windows): an endless, slowly dri
 cover art from *your own* Steam library, tilted in 3D like the Netflix poster wall, with a large
 clock and date in the centre.
 
+![SteamGameWall screensaver](docs/screenshot.webp)
+
 - Infinite seamless scroll on a single tilted plane (WebGL2, one instanced draw call, ~60 FPS)
 - Covers come from your whole library, not just installed games; a persistent shuffled deck
   keeps consecutive runs from repeating the same games, and the same cover never appears twice on screen
